@@ -24,4 +24,11 @@
         tools:layout_editor_absoluteX="155dp"
         tools:layout_editor_absoluteY="186dp" />
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

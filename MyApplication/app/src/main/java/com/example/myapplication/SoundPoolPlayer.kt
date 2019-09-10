@@ -12,8 +12,8 @@ class SoundPoolPlayer(pContext: Context) {
 
     init {
         // setup Soundpool
-        mShortPlayer = SoundPool.Builder().setMaxStreams(10).build()
-        mSounds[R.raw.test1] = mShortPlayer!!.load(pContext, R.raw.test1, 1)
+        mShortPlayer = SoundPool.Builder().setMaxStreams(1).build()
+        mSounds[R.raw.test1] = mShortPlayer!!.load(pContext, R.raw.test4, 1)
     }
 
     fun playShortResource(piResource: Int) {
