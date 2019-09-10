@@ -11,9 +11,9 @@ class SoundPoolPlayer(pContext: Context) {
     private val mSounds = HashMap<Int, Int>()
 
     init {
-        // setup Soundpool
+        // setup player
         mShortPlayer = SoundPool.Builder().setMaxStreams(1).build()
-        mSounds[R.raw.test1] = mShortPlayer!!.load(pContext, R.raw.test4, 1)
+        mSounds[R.raw.up2] = mShortPlayer!!.load(pContext, R.raw.up2, 1)
     }
 
     fun playShortResource(piResource: Int) {
