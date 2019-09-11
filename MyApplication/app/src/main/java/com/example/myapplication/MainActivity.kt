@@ -15,14 +15,17 @@ class MainActivity : AppCompatActivity() {
 
     private val REQUEST_CODE_SPEECH_INTENT = 100
 
-    private var player: SoundPoolPlayer = SoundPoolPlayer(this)
-    private var ttsMan: TextToSpeechManager = TextToSpeechManager(this)
-    private var sttParser: VoiceRecognitionParser = VoiceRecognitionParser()
+    private var player: SoundPoolPlayer? = null
+    private var ttsMan: TextToSpeechManager? = null
+    private var sttParser: VoiceRecognitionParser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        player = SoundPoolPlayer(this)
+        ttsMan = TextToSpeechManager(this)
+        sttParser = VoiceRecognitionParser()
         takeInput()
     }
 
@@ -39,18 +42,18 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, REQUEST_CODE_SPEECH_INTENT)
         } catch (e: Exception){
             // If there is an error message let the user know through tts
-            ttsMan.errorMessage(e)
+            ttsMan?.errorMessage(e)
         }
     }
 
 
     fun playSound(view: View) {
-        player.playShortResource(R.raw.up2)
+        player?.playShortResource(R.raw.up2)
     }
 
     public override fun onDestroy() {
         player?.release()
-        ttsMan.destroy()
+        ttsMan?.destroy()
         super.onDestroy()
     }
 
@@ -62,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 REQUEST_CODE_SPEECH_INTENT -> {
                     // Get text from result
                     val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                    var number = sttParser.getNumberFromResult(result)
+                    val number = sttParser?.getNumberFromResult(result)
                     println(number)
                 }
             }

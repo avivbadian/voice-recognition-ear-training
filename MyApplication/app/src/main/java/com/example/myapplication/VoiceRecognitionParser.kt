@@ -6,10 +6,12 @@ class VoiceRecognitionParser {
 
 
     // method to loop through results trying to find a number
-    fun getNumberFromResult(results: ArrayList<String>): Int {
-        for (str in results) {
-            if (getIntNumberFromText(str) != -1) {
-                return getIntNumberFromText(str)
+    fun getNumberFromResult(results: ArrayList<String>?): Int {
+        if (results != null) {
+            for (str in results) {
+                if (getIntNumberFromText(str) != -1) {
+                    return getIntNumberFromText(str)
+                }
             }
         }
         return -1
