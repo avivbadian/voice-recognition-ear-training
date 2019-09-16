@@ -37,7 +37,7 @@ class VoiceCommandService : Service() {
              val target = mtarget.get()
 
              when (msg.what) {
-                 MSG_RECOGNIZER_START_LISTENING ->
+                 MSG_RECOGNIZER_START_LISTENING -> {}
              }
          }
      }
