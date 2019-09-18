@@ -1,0 +1,12 @@
+#JSGF V1.0;
+
+grammar intervals;
+
+<interval> =
+          major second |
+          major third |
+          perfect forth |
+          perfect fifth |
+          major sixth |
+          major seventh |
+          perfect eight ;
