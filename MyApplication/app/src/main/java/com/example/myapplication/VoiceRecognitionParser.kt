@@ -4,7 +4,6 @@ import java.util.ArrayList
 
 class VoiceRecognitionParser {
 
-
     // method to loop through results trying to find a number
     fun getNumberFromResult(results: ArrayList<String>?): Int {
         if (results != null) {

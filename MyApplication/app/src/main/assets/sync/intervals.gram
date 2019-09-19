@@ -2,11 +2,11 @@
 
 grammar intervals;
 
-<interval> =
+public <interval> =
           major second |
           major third |
-          perfect forth |
+          perfect fourth |
           perfect fifth |
           major sixth |
           major seventh |
-          perfect eight ;
+          perfect eighth ;
