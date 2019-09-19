@@ -60,10 +60,13 @@ class MainActivity : AppCompatActivity(), RecognitionListener, TtsNotificationsL
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupPermissions()
+    }
+
+    fun run() {
         player = SoundPoolPlayer()
+        chooseMode(Mode.CMajorIntervals)
         ttsMan = TextToSpeechManager(this, this)
         sttParser = VoiceRecognitionParser()
-        chooseMode(Mode.CMajorIntervals)
     }
 
     /**
@@ -158,7 +161,8 @@ class MainActivity : AppCompatActivity(), RecognitionListener, TtsNotificationsL
             if (result != null) {
                 println(result.message)
             } else {
-                (activityReference).get()?.reset()
+                (activityReference).get()!!.ttsMan!!.speak("Welcome.")
+                (activityReference).get()!!.reset()
             }
         }
     }
@@ -220,6 +224,8 @@ class MainActivity : AppCompatActivity(), RecognitionListener, TtsNotificationsL
             } else {
                 makeRequest()
             }
+        } else {
+            run()
         }
     }
 
@@ -238,6 +244,7 @@ class MainActivity : AppCompatActivity(), RecognitionListener, TtsNotificationsL
                     Log.i(TAG, "Permission has been denied by user")
                 } else {
                     Log.i(TAG, "Permission has been granted by user")
+                    run()
                 }
             }
         }

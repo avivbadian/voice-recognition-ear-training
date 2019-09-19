@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">VocalEarTrainer</string>
     <string name="train_your_ear">Train your ear!</string>
 </resources>
