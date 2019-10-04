@@ -1,2 +1,2 @@
 # voice-recognition-ear-training
-Develop musical hearing through voice recognition based exercises
+Interval recognition training, based on speech recognition using CMUSphinx
